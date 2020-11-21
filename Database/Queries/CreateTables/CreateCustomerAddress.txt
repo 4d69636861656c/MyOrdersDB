@@ -1,0 +1,17 @@
+-- Get rid of table if it's already been created 
+DROP TABLE IF EXISTS CustomerAddress 
+
+-- CustomerAddress table 
+CREATE TABLE CustomerAddress 
+(
+	CustomerAddressID	INT NOT NULL PRIMARY KEY,
+	UserID				INT NOT NULL FOREIGN KEY REFERENCES Users(UserID),
+	FirstName			NVARCHAR(100) NOT NULL,
+	LastName			NVARCHAR(100) NOT NULL,
+	Street				NVARCHAR(255) NOT NULL,
+	Number				INT NOT NULL,
+	City				NVARCHAR(100) NOT NULL,
+	Region				NVARCHAR(100) NOT NULL,
+	Country				NVARCHAR(100) NOT NULL,
+	Code				NUMERIC NOT NULL
+)

@@ -1,0 +1,57 @@
+-- Select all rows. 
+SELECT * 
+FROM dbo.Users
+
+-- Select the first 3 rows and only display username. 
+SELECT 
+	TOP 3 dbo.Users.UserName 
+FROM dbo.Users
+
+-- Select by username. 
+SELECT 
+	u.UserName,
+	u.Email,
+	u.Phone
+FROM dbo.Users u
+WHERE u.UserName = N'angela'
+ORDER BY 
+	u.UserName ASC
+
+-- Select by creation date. 
+SELECT 
+	u.UserName,
+	u.Email
+FROM dbo.Users u
+WHERE u.CreatedOn = '20120618 10:34:09 AM'
+ORDER BY 
+	u.UserName ASC
+
+-- Select by phone number. 
+SELECT 
+	u.UserName,
+	u.Email
+FROM dbo.Users u
+WHERE u.Phone = 411646436583
+ORDER BY 
+	u.UserName ASC
+
+-- Select a user and display all their delivery data. 
+SELECT 
+	u.UserName,
+	u.Phone,
+	u.Email,
+	ca.FirstName,
+	ca.LastName,
+	ca.Country,
+	ca.Region,
+	ca.City,
+	ca.Street,
+	ca.Number,
+	ca.Code
+FROM
+    dbo.CustomerAddress ca
+INNER JOIN Users u 
+    ON u.UserID = ca.UserID
+	WHERE u.UserName = N'george'
+ORDER BY
+    u.UserName ASC;

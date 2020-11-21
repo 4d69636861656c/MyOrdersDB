@@ -1,0 +1,14 @@
+-- Get rid of table if it's already been created 
+DROP TABLE IF EXISTS Users 
+
+-- Users table 
+CREATE TABLE Users
+(
+	UserID				INT NOT NULL PRIMARY KEY,
+	UserName			NVARCHAR(25) NOT NULL,
+	UserPassword			NVARCHAR(25) NOT NULL,
+	Email				NVARCHAR(100) NOT NULL,
+	Phone				NUMERIC,
+	CreatedOn			DATETIME,
+	Active				TINYINT
+)

@@ -1,0 +1,9 @@
+-- Update Category 
+
+UPDATE Category
+SET Category.Name = N'Outdoors', Category.Description = N'Items for the outdoor enthusiasts.'
+WHERE Category.CategoryID = 6;
+
+UPDATE Category
+SET Category.Description = N'These items are enchanted by the wizard of Oz himself. Tread lightly!'
+WHERE Category.CategoryID =3;

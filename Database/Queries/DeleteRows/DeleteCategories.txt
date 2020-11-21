@@ -1,0 +1,3 @@
+-- Delete categories. 
+DELETE FROM dbo.Category WHERE Category.CategoryID = 4
+DELETE FROM dbo.Category WHERE Category.Name = 'Useless things, why even buy this?'

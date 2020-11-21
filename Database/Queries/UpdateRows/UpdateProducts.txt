@@ -1,0 +1,9 @@
+-- Update Products 
+
+UPDATE Products
+SET Products.Name = N'Cool Sunglasses', Products.Price = 15.00
+WHERE Products.ProductID = 1;
+
+UPDATE Products
+SET Products.Discount = 50.00
+WHERE Products.Price > 1000.00 AND Products.CreatedOn < '20201113 00:00:00 AM';

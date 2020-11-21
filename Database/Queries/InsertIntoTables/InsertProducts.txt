@@ -1,0 +1,18 @@
+USE [MyOrdersDB]
+GO
+
+-- Insert rows into Products 
+IF OBJECTPROPERTY(OBJECT_ID('dbo.Products'), 'TableHasIdentity') = 1
+SET IDENTITY_INSERT [dbo].[Products] ON
+INSERT [dbo].[Products] ([ProductID], [CategoryID], [Name], [Price], [Discount], [Description], [CreatedOn], [EditedOn])
+VALUES (1, 1, N'Sunglasses', 12.00, 0.00, N'A nice pair of sunglasses.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (2, 2, N'Pen', 8.00, 0.00, N'A cool pen.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (3, 2, N'Pencil', 8.00, 0.00, N'A cool pencil.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (4, 1, N'T-Shirt', 50.00, 0.00, N'A nice T-Shirt.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (5, 1, N'Piece of wood', 5.00, 0.00, N'A nice piece of wood.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (6, 4, N'Rock from Mars', 10000.00, 0.00, N'A nice rock from Mars.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (7, 3, N'Enchanted necklace', 5000.00, 0.00, N'A nice enchanted necklace.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (8, 1, N'Pants', 100.00, 0.00, N'A nice pair of pants.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (9, 1, N'Beanie', 12.00, 0.00, N'A nice beanie.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (10, 8, N'Giant toy bear', 100.00, 0.00, N'A nice giant toy.', '20120618 10:34:09 AM', '20120618 10:34:09 AM')
+SET IDENTITY_INSERT [dbo].[Products] OFF

@@ -1,0 +1,14 @@
+-- Update CustomerAddress 
+
+UPDATE CustomerAddress
+SET CustomerAddress.Street = N'Main Street', 
+	CustomerAddress.Number = 21, 
+	CustomerAddress.City = N'Jackson', 
+	CustomerAddress.Region = N'Mississippi', 
+	CustomerAddress.Country = N'USA', 
+	CustomerAddress.Code = 24323
+WHERE CustomerAddress.FirstName = N'George' AND CustomerAddress.LastName = N'George';
+
+UPDATE CustomerAddress
+SET CustomerAddress.FirstName = N'Clark', CustomerAddress.LastName = N'Kent'
+WHERE CustomerAddress.UserID = 5;

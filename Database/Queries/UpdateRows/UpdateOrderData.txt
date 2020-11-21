@@ -1,0 +1,9 @@
+-- Update OrderData 
+
+UPDATE OrderData
+SET OrderData.ShippedDate = '20190618 12:00:00 AM'
+WHERE OrderData.OrderDate = '20190610 12:00:00 AM' AND OrderData.Status = 'Delayed';
+
+UPDATE OrderData
+SET OrderData.Coupon = N'DISCOUNT50P'
+WHERE OrderData.CustomerAddressID = 3;

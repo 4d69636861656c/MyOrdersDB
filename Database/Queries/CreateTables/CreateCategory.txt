@@ -1,0 +1,11 @@
+-- Get rid of table if it's already been created 
+DROP TABLE IF EXISTS Category 
+
+-- Category table
+CREATE TABLE Category 
+(
+	CategoryID			INT NOT NULL PRIMARY KEY,
+	Name				NVARCHAR(50) NOT NULL,
+	Description			NVARCHAR(255),
+	CreatedOn			DATETIME
+)

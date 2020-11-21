@@ -1,0 +1,41 @@
+-- Select all rows. 
+SELECT * 
+FROM dbo.Products
+
+-- Select the first 3 rows and only display product name. 
+SELECT 
+	TOP 3 dbo.Products.Name 
+FROM dbo.Products
+
+-- Select by price. 
+SELECT 
+	p.Name,
+	p.Price
+FROM dbo.Products p
+WHERE p.Price < 50.00 
+ORDER BY 
+	p.Price ASC
+
+-- Select products and do a join with category. 
+SELECT 
+	p.Name,
+	p.Price,
+	c.Name
+FROM
+    dbo.Products p
+INNER JOIN Category c 
+    ON c.CategoryID = p.CategoryID
+ORDER BY
+    p.Name DESC;
+
+-- Select products that belong to the 'Apparel' category. 
+SELECT 
+	p.Name,
+	c.Name
+FROM
+    dbo.Products p
+INNER JOIN Category c 
+    ON c.CategoryID = p.CategoryID
+	WHERE c.Name = 'Apparel'
+ORDER BY
+    p.Name ASC;

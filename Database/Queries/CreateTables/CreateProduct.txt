@@ -1,0 +1,15 @@
+-- Get rid of table if it's already been created 
+DROP TABLE IF EXISTS Products 
+
+-- Products table 
+CREATE TABLE Products 
+(
+	ProductID			INT NOT NULL PRIMARY KEY,
+	CategoryID			INT NOT NULL FOREIGN KEY REFERENCES Category(CategoryID),
+	Name				NVARCHAR(100) NOT NULL,
+	Price				DECIMAL(18,2) NOT NULL,
+	Discount			DECIMAL(10,10),
+	Description			NVARCHAR(255),
+	CreatedOn			DATETIME,
+	EditedOn			DATETIME,
+)

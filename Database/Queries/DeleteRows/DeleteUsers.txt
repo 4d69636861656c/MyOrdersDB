@@ -1,0 +1,3 @@
+-- Delete users. 
+DELETE FROM dbo.Users WHERE Users.UserID = 9
+DELETE FROM dbo.Users WHERE Users.Email = 'chris@emailaddress.com'

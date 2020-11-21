@@ -1,0 +1,45 @@
+-- Select all rows. 
+SELECT * 
+FROM dbo.ProductVariant
+
+-- Select the first 3 rows and only display product variant color. 
+SELECT 
+	TOP 3 dbo.ProductVariant.Color
+FROM dbo.ProductVariant
+
+-- Select product variant from products. Order by product name descending. 
+SELECT 
+	p.Name,
+	p.Price,
+	pv.Color,
+	pv.Weight
+FROM
+    dbo.ProductVariant pv
+INNER JOIN Products p 
+    ON p.ProductID = pv.ProductID
+ORDER BY
+    p.Name DESC;
+
+-- Select product variant by color. 
+SELECT 
+	p.Name,
+	pv.Color
+FROM
+    dbo.ProductVariant pv
+INNER JOIN Products p 
+    ON p.ProductID = pv.ProductID
+WHERE pv.Color = N'White'
+ORDER BY
+    p.Name ASC;
+
+-- Select product variant by weight. 
+SELECT 
+	p.Name,
+	pv.Weight
+FROM
+    dbo.ProductVariant pv
+INNER JOIN Products p 
+    ON p.ProductID = pv.ProductID
+WHERE p.Name = N'Sunglasses' AND pv.Weight > 1.00
+ORDER BY
+    pv.Weight ASC;

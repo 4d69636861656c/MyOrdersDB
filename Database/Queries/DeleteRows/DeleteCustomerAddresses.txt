@@ -1,0 +1,3 @@
+-- Delete customer addresses. 
+DELETE FROM dbo.CustomerAddress WHERE CustomerAddress.CustomerAddressID = 9
+DELETE FROM dbo.CustomerAddress WHERE CustomerAddress.FirstName = 'Lamar' AND CustomerAddress.LastName = 'Lamar'

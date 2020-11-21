@@ -1,0 +1,65 @@
+-- Select all rows. 
+SELECT * 
+FROM dbo.CustomerAddress
+
+-- Select the first 3 rows and only display names. 
+SELECT 
+	TOP 3 dbo.CustomerAddress.LastName, dbo.CustomerAddress.LastName
+FROM dbo.CustomerAddress
+
+-- Select addresses by city. 
+SELECT 
+	ca.FirstName,
+	ca.LastName,
+	ca.Street,
+	ca.Number
+FROM dbo.CustomerAddress ca
+WHERE ca.City = N'Georgepolis'
+ORDER BY 
+	ca.FirstName ASC
+
+-- Select addresses by region. 
+SELECT 
+	ca.FirstName,
+	ca.LastName,
+	ca.City,
+	ca.Street,
+	ca.Number
+FROM dbo.CustomerAddress ca
+WHERE ca.Region = N'Lamar Region'
+ORDER BY 
+	ca.Street ASC
+
+-- Select addresses by country. 
+SELECT 
+	ca.Region,
+	ca.FirstName,
+	ca.LastName,
+	ca.City,
+	ca.Street,
+	ca.Number
+FROM dbo.CustomerAddress ca
+WHERE ca.Country = N'Bertranstan'
+ORDER BY 
+	ca.Region ASC
+
+-- Select a user and display their customer data. 
+SELECT 
+	u.UserName,
+	u.Phone,
+	u.Email,
+	ca.FirstName,
+	ca.LastName,
+	ca.Country,
+	ca.Region,
+	ca.City,
+	ca.Street,
+	ca.Number,
+	ca.Code
+FROM
+    dbo.CustomerAddress ca
+INNER JOIN Users u 
+    ON u.UserID = ca.UserID
+	WHERE u.UserName = N'george'
+ORDER BY
+    u.UserName ASC;

@@ -1,0 +1,18 @@
+USE [MyOrdersDB]
+GO
+
+-- Insert rows into ProductVariant 
+IF OBJECTPROPERTY(OBJECT_ID('dbo.ProductVariant'), 'TableHasIdentity') = 1
+SET IDENTITY_INSERT [dbo].[ProductVariant] ON 
+INSERT [dbo].[ProductVariant] ([ProductVariantID], [ProductID], [Color], [Weight], [Quantity])
+VALUES (1, 1, N'White', 1.10, 10),
+	   (2, 1, N'Black', 1.10, 10),
+	   (3, 1, N'Blue', 1.10, 10),
+	   (4, 1, N'Yellow', 1.10, 10),
+	   (5, 1, N'Pink', 1.10, 10),
+	   (6, 2, N'White', 1.10, 10),
+	   (7, 2, N'White', 1.10, 10),
+	   (8, 2, N'White', 1.10, 10),
+	   (9, 2, N'White', 1.10, 10),
+	   (10, 2, N'White', 1.10, 10)
+SET IDENTITY_INSERT [dbo].[ProductVariant] OFF

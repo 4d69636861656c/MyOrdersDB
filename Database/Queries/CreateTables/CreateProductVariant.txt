@@ -1,0 +1,12 @@
+-- Get rid of table if it's already been created 
+DROP TABLE IF EXISTS ProductVariant 
+
+-- ProductVariant table  
+CREATE TABLE ProductVariant 
+(
+	ProductVariantID	INT NOT NULL PRIMARY KEY,
+	ProductID			INT NOT NULL FOREIGN KEY REFERENCES Products(ProductID),
+	Color				NVARCHAR(25),
+	Weight				DECIMAL(8,2),
+	Quantity			INT
+)

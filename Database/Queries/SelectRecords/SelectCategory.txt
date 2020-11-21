@@ -1,0 +1,55 @@
+-- Select all rows. 
+SELECT * 
+FROM dbo.Category
+
+-- Select the first 3 rows and display category name and creation date. 
+SELECT 
+	TOP 3 dbo.Category.Name, dbo.Category.CreatedOn
+FROM dbo.Category
+
+-- Select and order by name. 
+SELECT 
+	c.Name,
+	c.Description
+FROM dbo.Category c
+ORDER BY 
+	c.Name ASC
+
+-- Select by ID. 
+SELECT 
+	c.Name
+FROM dbo.Category c
+WHERE c.CategoryID = 3
+
+-- Select new categories, created after a specific date. 
+SELECT 
+	c.Name,
+	c.CreatedOn
+FROM dbo.Category c
+WHERE c.CreatedOn < '20120618 10:34:10 AM'
+ORDER BY 
+	c.Name ASC
+
+-- Select products and do a join with category. 
+SELECT 
+	p.Name,
+	p.Price,
+	c.Name
+FROM
+    dbo.Products p
+INNER JOIN Category c 
+    ON c.CategoryID = p.CategoryID
+ORDER BY
+    p.Name DESC;
+
+-- Select product name and category name that belong to the 'Utilities' category. 
+SELECT 
+	p.Name,
+	c.Name
+FROM
+    dbo.Products p
+INNER JOIN Category c 
+    ON c.CategoryID = p.CategoryID
+	WHERE c.Name = N'Utilities'
+ORDER BY
+    p.Name ASC;

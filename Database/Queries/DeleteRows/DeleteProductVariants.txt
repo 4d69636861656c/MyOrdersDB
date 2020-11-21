@@ -1,0 +1,3 @@
+-- Delete product variants. 
+DELETE FROM dbo.ProductVariant WHERE ProductVariant.ProductVariantID = 10
+DELETE FROM dbo.ProductVariant WHERE ProductVariant.ProductID = 6

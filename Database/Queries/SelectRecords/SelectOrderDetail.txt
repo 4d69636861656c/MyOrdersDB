@@ -1,0 +1,42 @@
+-- Select all rows. 
+SELECT * 
+FROM dbo.OrderDetails
+
+-- Select by order ID. 
+SELECT 
+	odt.OrderID,
+	odt.ProductVariantID,
+	odt.Quantity
+FROM dbo.OrderDetails odt
+WHERE odt.OrderID = 1
+ORDER BY 
+	odt.Quantity DESC
+
+-- Select that does something nice. 
+-- It will return order details, like the product ordered along with its color, the quantity, then the person ordering it and their contact info, as well as the order date. 
+SELECT 
+	p.Name, 
+	pv.Color, 
+	odt.Quantity, 
+	ca.FirstName, 
+	ca.LastName, 
+	u.UserName, 
+	u.Phone, 
+	u.Email, 
+	od.OrderDate
+FROM 
+	Users AS u
+		INNER JOIN CustomerAddress AS ca
+		ON u.UserID = ca.UserID
+			INNER JOIN OrderData AS od
+			ON ca.CustomerAddressID = od.CustomerAddressID
+				INNER JOIN OrderDetails AS odt
+				ON od.OrderID = odt.OrderID
+					INNER JOIN ProductVariant AS pv
+					ON odt.ProductVariantID = pv.ProductVariantID
+						INNER JOIN Products AS p
+						ON pv.ProductID = p.ProductID
+WHERE u.Email = N'george@emailaddress.com' AND 
+	  od.Status = N'Getting ready to ship.'
+
+-- Only 3 selects for this one. :( 

@@ -1,0 +1,9 @@
+-- Update OrderDetails 
+
+UPDATE OrderDetails
+SET OrderDetails.Quantity = 5
+WHERE OrderDetails.OrderID = 3;
+
+UPDATE OrderDetails
+SET OrderDetails.Quantity = 2
+WHERE OrderDetails.OrderID = 3 AND OrderDetails.ProductVariantID = 1;

@@ -1,0 +1,18 @@
+USE [MyOrdersDB]
+GO
+
+-- Insert rows into Users 
+IF OBJECTPROPERTY(OBJECT_ID('dbo.Users'), 'TableHasIdentity') = 1
+SET IDENTITY_INSERT [dbo].[Users] ON 
+INSERT [dbo].[Users] ([UserID], [UserName], [UserPassword], [Email], [Phone], [CreatedOn], [Active]) 
+VALUES (1, N'george', N'georgepass', N'george@emailaddress.com', 43657836583, '20120618 10:34:09 AM', 1),
+	   (2, N'lamar', N'lamarpass', N'lamar@emailaddress.com', 54646456345, '20120618 10:34:09 AM', 2),
+	   (3, N'vinny', N'vinnypass', N'vinny@emailaddress.com', 555555555, '20120618 10:34:09 AM', 1),
+	   (4, N'angela', N'angelapass', N'angela@emailaddress.com', 56456464, '20120618 10:34:09 AM', 3),
+	   (5, N'matt', N'mattpass', N'matt@emailaddress.com', 411646436583, '20120618 10:34:09 AM', 8),
+	   (6, N'paul', N'paulpass', N'paul@emailaddress.com', 45646443432, '20120618 10:34:09 AM', 1),
+	   (7, N'chris', N'chrispass', N'chris@emailaddress.com', 47345342342, '20120618 10:34:09 AM', 5),
+	   (8, N'monika', N'monikapass', N'monika@emailaddress.com', 9856745055, '20120618 10:34:09 AM', 1),
+	   (9, N'maria', N'mariapass', N'maria@emailaddress.com', 8564635435, '20120618 10:34:09 AM', 2),
+	   (10, N'myron', N'myronpass', N'myron@emailaddress.com', 143469646411, '20120618 10:34:09 AM', 1)
+SET IDENTITY_INSERT [dbo].[Users] OFF

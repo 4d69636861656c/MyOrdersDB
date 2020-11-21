@@ -1,0 +1,3 @@
+-- Delete order data. 
+DELETE FROM dbo.OrderData WHERE OrderData.OrderID = 4
+DELETE FROM dbo.OrderData WHERE OrderData.Status = 'Delivered'

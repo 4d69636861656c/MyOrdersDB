@@ -1,0 +1,3 @@
+-- Delete products. 
+DELETE FROM dbo.Products WHERE Products.ProductID = 6
+DELETE FROM dbo.Products WHERE Products.Name = 'Enchanted necklace'

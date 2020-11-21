@@ -1,0 +1,18 @@
+USE [MyOrdersDB]
+GO
+
+-- Insert rows into OrderData 
+IF OBJECTPROPERTY(OBJECT_ID('dbo.OrderData'), 'TableHasIdentity') = 1
+SET IDENTITY_INSERT [dbo].[OrderData] ON 
+INSERT [dbo].[OrderData] ([OrderID], [CustomerAddressID], [Coupon], [Status], [OrderDate], [ShippedDate])
+VALUES (1, 1, N'NODISCOUNT4U', N'Getting ready to ship.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (2, 1, N'HDFGKJHD6456', N'Searching for items.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (3, 1, N'DHBNVJSDHKSD', N'We cant find these items.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (4, 1, N'IWESBNMBFJDF', N'Cant ship this.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (5, 1, N'RHJG47564554', N'I dont know what this person wants.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (6, 1, N'D6F7GKJHDJKD', N'This database is a joke.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (7, 1, N'VHJSDFJJKLSF', N'All is good.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (8, 1, N'TY2UBUYAGAIN', N'Pack is leaving.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (9, 1, N'KCOMEBACKBUY', N'I dont know how to ship this item.', '20120618 10:34:09 AM', '20120618 10:34:09 AM'),
+	   (10, 1, N'DISCOUNT50P', N'I dont take my job seriously.', '20120618 10:34:09 AM', '20120618 10:34:09 AM')
+SET IDENTITY_INSERT [dbo].[Users] OFF

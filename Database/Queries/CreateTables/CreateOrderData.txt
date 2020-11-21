@@ -1,0 +1,13 @@
+-- Get rid of table if it's already been created 
+DROP TABLE IF EXISTS OrderData 
+
+-- Orders table 
+CREATE TABLE OrderData 
+(
+	OrderID				INT NOT NULL PRIMARY KEY,
+	CustomerAddressID	INT NOT NULL FOREIGN KEY REFERENCES CustomerAddress(CustomerAddressID),
+	Coupon				NVARCHAR(25),
+	Status				NVARCHAR(255) NOT NULL,
+	OrderDate			DATETIME NOT NULL,
+	ShippedDate			DATETIME NOT NULL
+)

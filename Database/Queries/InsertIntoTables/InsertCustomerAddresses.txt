@@ -1,0 +1,18 @@
+USE [MyOrdersDB]
+GO
+
+-- Insert rows into CustomerAddress 
+IF OBJECTPROPERTY(OBJECT_ID('dbo.CustomerAddress'), 'TableHasIdentity') = 1
+SET IDENTITY_INSERT [dbo].[CustomerAddress] ON 
+INSERT [dbo].[CustomerAddress] ([CustomerAddressID], [UserID], [FirstName], [LastName], [Street], [Number], [City], [Region], [Country], [Code])
+VALUES (1, 1, N'George', N'George', N'George Street', 15, N'Georgepolis', N'George Region', N'Georgestan', 348753),
+	   (2, 2, N'Lamar', N'Lamar', N'Lamar Street', 3, N'Lamarpolis', N'Lamar Region', N'Lamarstan', 456309),
+	   (3, 3, N'Vinny', N'Vinny', N'Vinny Street', 7, N'Vinnypolis', N'Vinny Region', N'Vinnystan', 123405),
+	   (4, 1, N'George', N'George', N'George Street', 16, N'Georgepolis', N'George Region', N'Georgestan', 348753),
+	   (5, 2, N'Bertran', N'Bertran', N'Bertran Street', 28, N'Bertranpolis', N'Bertran Region', N'Bertranstan', 456309),
+	   (6, 3, N'Matt', N'Matt', N'Matt Street', 15, N'Mattpolis', N'Matt Region', N'Mattstan', 123405),
+	   (7, 4, N'Paul', N'Paul', N'Paul Street', 15, N'Paulpolis', N'Paul Region', N'Paulstan', 980154),
+	   (8, 1, N'George', N'George', N'George Street', 17, N'Georgepolis', N'George Region', N'Georgestan', 348753),
+	   (9, 5, N'Aaron', N'Aaron', N'Aaron Street', 15, N'Aaronpolis', N'Aaron Region', N'Aaronstan', 476875),
+	   (10, 1, N'George', N'George', N'George Street', 18, N'Georgepolis', N'George Region', N'Georgestan', 348753)
+SET IDENTITY_INSERT [dbo].[Users] OFF

@@ -1,0 +1,9 @@
+-- Update ProductVariant 
+
+UPDATE ProductVariant
+SET ProductVariant.Color = N'Red'
+WHERE ProductVariant.ProductID = 1 AND ProductVariant.Color = N'Blue';
+
+UPDATE ProductVariant
+SET ProductVariant.Weight = 10.00
+WHERE ProductVariant.ProductID = 3;

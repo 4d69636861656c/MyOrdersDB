@@ -1,0 +1,47 @@
+-- Select all rows. 
+SELECT * 
+FROM dbo.OrderData
+
+-- Select the first 3 rows and only display order date and shipped date. 
+SELECT 
+	TOP 3 dbo.OrderData.OrderDate, dbo.OrderData.ShippedDate
+FROM dbo.OrderData
+
+-- Select by status. 
+SELECT 
+	od.OrderDate,
+	od.Status
+FROM dbo.OrderData od
+WHERE od.Status = N'I dont take my job seriously.' 
+ORDER BY 
+	od.OrderDate DESC
+
+-- Select by order date. 
+SELECT 
+	od.OrderID,
+	od.OrderDate,
+	od.Status
+FROM dbo.OrderData od
+WHERE od.OrderDate = '20120618 10:34:09 AM'
+ORDER BY 
+	od.OrderDate DESC
+
+-- Select orders and the customer addresses asigned to them. 
+SELECT 
+	od.OrderID,
+	od.OrderDate,
+	od.Status,
+	ca.FirstName,
+	ca.LastName,
+	ca.Street,
+	ca.Number,
+	ca.City,
+	ca.Region,
+	ca.Country,
+	ca.Code
+FROM
+    dbo.OrderData od
+INNER JOIN CustomerAddress ca 
+    ON ca.CustomerAddressID = od.CustomerAddressID
+ORDER BY
+    od.OrderDate DESC;

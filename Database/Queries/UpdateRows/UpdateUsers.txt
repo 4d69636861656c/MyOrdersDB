@@ -1,0 +1,9 @@
+-- Update Users 
+
+UPDATE Users
+SET Users.Email = N'mattsnewandimprovedemailaddress@yahoo.com'
+WHERE Users.UserName = N'matt';
+
+UPDATE Users
+SET Users.Phone = 999444111
+WHERE Users.UserName = N'matt';

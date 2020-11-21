@@ -1,0 +1,10 @@
+-- Get rid of table if it's already been created 
+DROP TABLE IF EXISTS OrderDetails 
+
+-- OrderDetails table 
+CREATE TABLE OrderDetails 
+(
+	OrderID				INT NOT NULL FOREIGN KEY REFERENCES OrderData(OrderID),
+	ProductVariantID	INT NOT NULL FOREIGN KEY REFERENCES ProductVariant(ProductVariantID),
+	Quantity			INT NOT NULL
+)
