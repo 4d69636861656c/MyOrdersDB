@@ -1,1 +1,46 @@
 ## Category 
+
+### Create Table 
+
+-- Get rid of table if it's already been created 
+DROP TABLE IF EXISTS Category 
+
+-- Category table
+CREATE TABLE Category 
+(
+	CategoryID			INT NOT NULL PRIMARY KEY,
+	Name				NVARCHAR(50) NOT NULL,
+	Description			NVARCHAR(255),
+	CreatedOn			DATETIME
+)
+
+### Insert Into Table 
+
+USE [MyOrdersDB]
+GO
+
+-- Insert rows into Category 
+IF OBJECTPROPERTY(OBJECT_ID('dbo.Category'), 'TableHasIdentity') = 1
+SET IDENTITY_INSERT [dbo].[Category] ON 
+INSERT [dbo].[Category] ([CategoryID], [Name], [Description], [CreatedOn])
+VALUES (1, N'Apparel', N'Apparel, buy now!', '20120618 10:34:09 AM'),
+	   (2, N'Utilities', N'Utilities.', '20120618 10:34:09 AM'),
+	   (3, N'Magic', N'Magic.', '20120618 10:34:09 AM'),
+	   (4, N'Otherworldly', N'Otherworldly.', '20120618 10:34:09 AM'),
+	   (5, N'Edible', N'Edible.', '20120618 10:34:09 AM'),
+	   (6, N'Sports', N'Sports.', '20120618 10:34:09 AM'),
+	   (7, N'Babies', N'Babies.', '20120618 10:34:09 AM'),
+	   (8, N'Toys', N'Toys.', '20120618 10:34:09 AM'),
+	   (9, N'Books', N'Books.', '20120618 10:34:09 AM'),
+	   (10, N'Useless things, why even buy this?', N'Useless things.', '20120618 10:34:09 AM')
+SET IDENTITY_INSERT [dbo].[Category] OFF
+
+### Update Rows 
+
+### Delete Rows 
+
+-- Delete categories. 
+DELETE FROM dbo.Category WHERE Category.CategoryID = 4
+DELETE FROM dbo.Category WHERE Category.Name = 'Useless things, why even buy this?'
+
+### Select Records 
