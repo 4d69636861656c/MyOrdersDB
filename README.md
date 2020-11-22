@@ -5,7 +5,8 @@ This is a simple database which can be used for a shop, it can store users, cust
 Below you can find the diagram representing the tables and relationships between them. 
 ![Database Diagram](Images/Diagrams/DatabaseDiagram.png)
 ## Tables 
-### ![Categories](Database/Queries/CreateTables/CreateCategory.txt)
+### Categories 
+Links: ![Create Tables](Database/Queries/CreateTables/CreateCategory.txt) ![Delete Rows](Database/Queries/DeleteRows/DeleteCategories.txt)
 This is the table which stores categories. CategoryID is the primary key. We have a Name, Description and CreatedOn columns present. No foreign keys are needed on this one, however CategoryID is used on Product, as a foreign key. 
 ### Customer Addresses 
 Customer adresses are stored in the CustomerAddress table. This is linked to a User and one particular user can have multiple addresses associated with it. In this table, we have the following columns: CustomerAddressID, UserID, FirstName, LastName, Street, Number, City, Region, Country, Code. CustomerAddressID is the primary key. As mentioned, UserID is a foreign key. 
